@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { addTodo } from "../actions";
+import { addTodo, stepDo } from "../actions";
 
 class AddTodo extends Component {
   state = {
@@ -11,6 +11,7 @@ class AddTodo extends Component {
   onAdd = ev => {
     const { dispatch } = this.props;
     dispatch(addTodo(this.state.text));
+    // dispatch(stepDo({ a: 43 }));
     this.setState({
       text: ""
     });
